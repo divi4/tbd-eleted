@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf-8">
+  	<meta name="description" content="Your description goes here">
+  	<meta name="keywords" content="one, two, three">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>vars</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/main.js"></script>
+		<script src="js/snap.svg-min.js"></script>
+	</head>
+	<body>
+		<svg id="svg"></svg>
+		<script>
+			var scales;
+			var plate1;
+			var plate2;
+			var s = Snap("#svg");
+			Snap.load("weighing-end.svg", function ( loadedFragment ) {
+                scales = f.select('#scales'),
+	            plate1 = f.select('#plate1'),
+	            plate2 = f.select('#plate2');
+		        s.append(scales);
+		        s.append(plate1);
+		        s.append(plate2);
+		        anim1();
+            });
+
+			var anim1 = function() {
+			    scales.animate({
+			        'transform': 'r45,320,120'
+			    });
+			};
+		</script>
+	</body>
